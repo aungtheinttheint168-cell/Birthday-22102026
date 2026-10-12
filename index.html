@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Birthday Surprise ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     FLOATING BACKGROUND
+===================================== -->
+
+<div class="background-hearts">
+
+    <span>♡</span>
+    <span>♥️</span>
+    <span>♡</span>
+    <span>♥️</span>
+    <span>♡</span>
+    <span>♥️</span>
+    <span>♡</span>
+    <span>♥️</span>
+
+</div>
+
+
+
+<!-- =====================================
+     PAGE 1 — LOGIN
+===================================== -->
+
+<section id="loginPage" class="page active">
+
+    <div class="login-card">
+
+        <div class="lock-icon">
+            🔐
+        </div>
+
+        <p class="tiny-title">
+            A LITTLE SURPRISE
+        </p>
+
+        <h1>
+            Hey You! 💗
+        </h1>
+
+        <p class="login-text">
+
+            This little world was made
+            especially for you.
+
+            <br>
+
+            Enter your name &amp; password ✨
+
+        </p>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Secret Password"
+        >
+
+        <button
+            class="main-button"
+            onclick="login()">
+        
+            Enter My Surprise 💌
+            
+        </button>
+
+        <p id="error"></p>
+
+        <div class="login-decoration">
+            ✦　♡　✦　♡　✦
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PAGE 2 — OPENING
+===================================== -->
+
+<section
+    id="openingPage"
+    class="page hidden"
+>
+
+    <div class="opening-content">
+
+        <div class="big-heart">
+            ♡
+        </div>
+
+        <p>
+            Wait...
+        </p>
+
+        <h1>
+            Something special
+            is waiting for you.
+        </h1>
+
+        <div class="loading-dots">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PAGE 3 — BIRTHDAY
+===================================== -->
+
+<section
+    id="birthdayPage"
+    class="page hidden"
+>
+
+    <div class="birthday-card">
+
+        <p class="small-title">
+            TODAY IS YOUR SPECIAL DAY ✨
+        </p>
+
+        <h1 class="birthday-title">
+            Happy Birthday
+        </h1>
+
+        <div class="sparkles">
+            ✦ ✧ ✦ ✧ ✦
+        </div>
+
+        <h2 id="boyName"></h2>
+
+
+        <!-- CAKE -->
+
+        <div class="cake-area">
+
+            <div class="cake">
+
+                <div class="candle">
+
+                    <div class="flame"></div>
+
+                </div>
+
+                <div class="cake-top">
+                    <span>🍓</span>
+                </div>
+
+                <div class="cake-middle">
+
+                    <div class="cream"></div>
+
+                </div>
+
+                <div class="cake-bottom">
+
+                    <div class="cream"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="wish-text">
+            Make a wish before the candle goes out... 🕯
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="makeWish()"
+        >
+            Make a Wish ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PAGE 4 — LETTER
+===================================== -->
+
+<section
+    id="letterPage"
+    class="page hidden"
+>
+
+    <div class="letter-card">
+
+        <div class="envelope-icon">
+            💌
+        </div>
+
+        <p class="small-title">
+            A LITTLE LETTER FOR YOU
+        </p>
+
+        <h1>
+            Open My Letter
+        </h1>
+
+        <div
+            id="typedMessage"
+            class="typed-message"
+        ></div>
+
+
+        <!-- REASONS -->
+
+        <div class="reason">
+
+            <div>
+                ✨
+            </div>
+
+            <h3>
+                Your Presence
+            </h3>
+
+            <p>
+                You make simple moments
+                feel special.
+            </p>
+
+        </div>
+
+
+        <div class="reason">
+
+            <div>
+                💗
+            </div>
+
+            <h3>
+                You
+            </h3>
+
+            <p>
+                Simply because you are
+                wonderfully you.
+            </p>
+
+        </div>
+
+
+        <!-- GALLERY BUTTON -->
+
+        <button
+            id="galleryButton"
+            class="main-button hidden"
+            onclick="showGallery()"
+        >
+            Our Memories 📸
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PAGE 5 — GALLERY
+===================================== -->
+
+<section
+    id="galleryPage"
+    class="page hidden"
+>
+
+    <div class="gallery-card">
+
+        <p class="small-title">
+            OUR LITTLE MEMORIES
+        </p>
+
+        <h1>
+            Moments With You ❤️
+        </h1>
+
+
+        <!-- PHOTO VIEWER -->
+
+        <div class="photo-viewer">
+
+            <img
+                id="mainPhoto"
+                src="images/photo1.jpg"
+                alt="Memory"
+            >
+
+            <div class="photo-number">
+
+                <span id="photoNumber">
+                    1
+                </span>
+
+                /
+
+                <span id="totalPhotos">
+                    10
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO BUTTONS -->
+
+        <div class="photo-buttons">
+
+            <button
+                onclick="previousPhoto()"
+            >
+                ←
+            </button>
+
+            <button
+                onclick="nextPhoto()"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <!-- PHOTO CAPTION -->
+
+        <p id="photoCaption">
+            A beautiful memory ❤️
+        </p>
+
+
+        <!-- TIMELINE BUTTON -->
+
+        <button
+            class="main-button"
+            onclick="showTimeline()"
+        >
+            Our Story 🕰
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PAGE 6 — TIMELINE
+===================================== -->
+
+<section
+    id="timelinePage"
+    class="page hidden"
+>
+
+    <div class="timeline-card">
+
+        <p class="small-title">
+            OUR STORY 🕰
+        </p>
+
+        <h1>
+            Our Little Journey ❤️
+        </h1>
+
+        <div class="timeline-item">
+
+            <div class="timeline-icon">
+                🌸
+            </div>
+
+            <h3>
+                The Beginning
+            </h3>
+
+            <p>
+                Every beautiful story
+                starts with a simple moment.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-icon">
+                💗
+            </div>
+
+            <h3>
+                Beautiful Memories
+            </h3>
+
+            <p>
+                Some moments become memories
+                that we always want to keep.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-icon">
+                ✨
+            </div>
+
+            <h3>
+                More To Come
+            </h3>
+
+            <p>
+                And this is only the beginning
+                of many more beautiful moments.
+            </p>
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="showFinal()"
+        >
+            One Last Surprise 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     PAGE 7 — FINAL
+===================================== -->
+
+<section
+    id="finalPage"
+    class="page hidden"
+>
+
+    <div class="final-card">
+
+        <div class="final-stars">
+            ✨ ✦ ✨ ✦ ✨
+        </div>
+
+        <div class="final-gift">
+            🎁
+        </div>
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+        <h2 id="finalName"></h2>
+
+        <p>
+
+            May your days be filled
+            with happiness,
+
+            <br>
+
+            beautiful memories,
+
+            <br>
+
+            and dreams that come true. ✨
+
+        </p>
+
+        <div class="final-message">
+
+            Keep smiling. ❤️
+
+            <br><br>
+
+            You deserve beautiful
+            things in life.
+
+            <br><bold><itallic>❤️✨💗🌸Thal" has made a wish for you❤️✨💗🌸</itallic></bold></br>
+
+        </div>
+
+        <div class="confetti-container"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
